@@ -10,7 +10,8 @@ public class StreamEx5 {
                 "OptionalDouble", "IntStream", "count", "sum"
         };
 
-        Stream.of(strArr).forEach(System.out::println);
+        /*Stream.of(strArr).parallel().forEach(System.out::println);*/
+        Stream.of(strArr).parallel().forEachOrdered(System.out::println);
 
         boolean noEmptyStr = Stream.of(strArr).noneMatch(s->s.length() == 0);
         /*Optional<String> sWord = Stream.of(strArr).filter(s->s.charAt(0) == 's').findFirst();*/
